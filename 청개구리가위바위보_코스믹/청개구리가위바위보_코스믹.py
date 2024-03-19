@@ -33,10 +33,11 @@ def play_game():
         if user_choice not in ['가위', '바위', '보']:
             print("잘못된 입력입니다. 다시 입력해주세요.")
             continue
-        
+
+        # 상대의 선택 표시
         computer_choice = get_computer_choice()
         
-        print("상대는 [{}]을 냈습니다 :".format(computer_choice))  # 상대의 선택 표시
+        print("상대는 [{}]을 냈습니다 :".format(computer_choice)) 
 
         # 가위바위보 결과 입력 시간 제한 설정
         player_result = is_input_valid(3)
