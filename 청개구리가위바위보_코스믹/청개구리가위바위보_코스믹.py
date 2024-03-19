@@ -2,7 +2,7 @@
 import random
 import time
 
-# »ç¿ëÀÚ°¡ ½Ã°£ ³»¿¡ ÀÔ·ÂÀ» ¿Ï·áÇß´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+# ì‚¬ìš©ìê°€ ì‹œê°„ ë‚´ì— ì…ë ¥ì„ ì™„ë£Œí–ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 def is_input_valid(seconds):
     start = time.time()
     user_input = input()
@@ -12,65 +12,65 @@ def is_input_valid(seconds):
     if elapsed_time <= seconds:
         return user_input
     else:
-        print("½Ã°£ ÃÊ°ú! ÀÔ·Â ½Ã°£ÀÌ {}ÃÊ¸¦ ÃÊ°úÇß½À´Ï´Ù.".format(seconds))
+        print("ì‹œê°„ ì´ˆê³¼! ì…ë ¥ ì‹œê°„ì´ {}ì´ˆë¥¼ ì´ˆê³¼í–ˆìŠµë‹ˆë‹¤.".format(seconds))
         return None
 
-# ÄÄÇ»ÅÍ°¡ ¼±ÅÃÇÑ °¡À§¹ÙÀ§º¸ ¹®ÀÚ¿­À» ¹İÈ¯ÇÏ´Â ÇÔ¼ö
+# ì»´í“¨í„°ê°€ ì„ íƒí•œ ê°€ìœ„ë°”ìœ„ë³´ ë¬¸ìì—´ì„ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
 def get_computer_choice():
-    choice = random.choice(["°¡À§", "¹ÙÀ§", "º¸"])
+    choice = random.choice(["ê°€ìœ„", "ë°”ìœ„", "ë³´"])
     return choice
 
-# °¡À§¹ÙÀ§º¸ °ÔÀÓ ÁøÇà ÇÔ¼ö
+# ê°€ìœ„ë°”ìœ„ë³´ ê²Œì„ ì§„í–‰ í•¨ìˆ˜
 def play_game():
     while True:
-        # °¡À§¹ÙÀ§º¸
-        print("Ã»°³±¸¸® °¡À§¹ÙÀ§º¸ °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù!")
-        print("°¡À§, ¹ÙÀ§, º¸¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ")
+        # ê°€ìœ„ë°”ìœ„ë³´
+        print("ì²­ê°œêµ¬ë¦¬ ê°€ìœ„ë°”ìœ„ë³´ ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤!")
+        print("ê°€ìœ„, ë°”ìœ„, ë³´ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ")
 
-        user_choice = input().strip().lower()
+        user_choice = input().strip()
         
-        # À¯È¿ÇÑ ÀÔ·ÂÀÎÁö È®ÀÎ
-        if user_choice not in ['°¡À§', '¹ÙÀ§', 'º¸']:
-            print("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.")
+        # ìœ íš¨í•œ ì…ë ¥ì¸ì§€ í™•ì¸
+        if user_choice not in ['ê°€ìœ„', 'ë°”ìœ„', 'ë³´']:
+            print("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.")
             continue
         
         computer_choice = get_computer_choice()
         
-        print("»ó´ë´Â [{}]À» ³Â½À´Ï´Ù :".format(computer_choice[0:2]))  # »ó´ëÀÇ ¼±ÅÃ Ç¥½Ã
+        print("ìƒëŒ€ëŠ” [{}]ì„ ëƒˆìŠµë‹ˆë‹¤ :".format(computer_choice[0:2]))  # ìƒëŒ€ì˜ ì„ íƒ í‘œì‹œ
 
-        # °¡À§¹ÙÀ§º¸ °á°ú ÀÔ·Â ½Ã°£ Á¦ÇÑ ¼³Á¤
+        # ê°€ìœ„ë°”ìœ„ë³´ ê²°ê³¼ ì…ë ¥ ì‹œê°„ ì œí•œ ì„¤ì •
         player_result = is_input_valid(3)
 
         if player_result is None:
-            # »ç¿ëÀÚ ÀÔ·Â ½Ã°£ ÃÊ°ú
-            print("½Ã°£ ÃÊ°ú·Î °ÔÀÓ¿¡¼­ ÆĞ¹èÇß½À´Ï´Ù.")
+            # ì‚¬ìš©ì ì…ë ¥ ì‹œê°„ ì´ˆê³¼
+            print("ì‹œê°„ ì´ˆê³¼ë¡œ ê²Œì„ì—ì„œ íŒ¨ë°°í–ˆìŠµë‹ˆë‹¤.")
             return
 
-        # °á°ú È®ÀÎ
-        if (user_choice == "°¡À§" and computer_choice == "º¸" and player_result == "Á³´Ù") or \
-           (user_choice == "¹ÙÀ§" and computer_choice == "°¡À§" and player_result == "Á³´Ù") or \
-           (user_choice == "º¸" and computer_choice == "¹ÙÀ§" and player_result == "Á³´Ù"):
-            print("°ÔÀÓ¿¡¼­ ½Â¸®ÇÏ¼Ì½À´Ï´Ù!")
-        elif (user_choice == "°¡À§" and computer_choice == "¹ÙÀ§" and player_result == "ÀÌ°å´Ù") or \
-             (user_choice == "¹ÙÀ§" and computer_choice == "º¸" and player_result == "ÀÌ°å´Ù") or \
-             (user_choice == "º¸" and computer_choice == "°¡À§" and player_result == "ÀÌ°å´Ù"):
-            print("°ÔÀÓ¿¡¼­ ½Â¸®ÇÏ¼Ì½À´Ï´Ù!")
-        elif (user_choice == "°¡À§" and computer_choice == "°¡À§" and player_result == "°³±¼") or \
-             (user_choice == "¹ÙÀ§" and computer_choice == "¹ÙÀ§" and player_result == "°³±¼") or \
-             (user_choice == "º¸" and computer_choice == "º¸" and player_result == "°³±¼"):
-            print("°ÔÀÓ¿¡¼­ ½Â¸®ÇÏ¼Ì½À´Ï´Ù!")
+        # ê²°ê³¼ í™•ì¸
+        if (user_choice == "ê°€ìœ„" and computer_choice == "ë³´" and player_result == "ì¡Œë‹¤") or \
+           (user_choice == "ë°”ìœ„" and computer_choice == "ê°€ìœ„" and player_result == "ì¡Œë‹¤") or \
+           (user_choice == "ë³´" and computer_choice == "ë°”ìœ„" and player_result == "ì¡Œë‹¤"):
+            print("ê²Œì„ì—ì„œ ìŠ¹ë¦¬í•˜ì…¨ìŠµë‹ˆë‹¤!")
+        elif (user_choice == "ê°€ìœ„" and computer_choice == "ë°”ìœ„" and player_result == "ì´ê²¼ë‹¤") or \
+             (user_choice == "ë°”ìœ„" and computer_choice == "ë³´" and player_result == "ì´ê²¼ë‹¤") or \
+             (user_choice == "ë³´" and computer_choice == "ê°€ìœ„" and player_result == "ì´ê²¼ë‹¤"):
+            print("ê²Œì„ì—ì„œ ìŠ¹ë¦¬í•˜ì…¨ìŠµë‹ˆë‹¤!")
+        elif (user_choice == "ê°€ìœ„" and computer_choice == "ê°€ìœ„" and player_result == "ê°œêµ´") or \
+             (user_choice == "ë°”ìœ„" and computer_choice == "ë°”ìœ„" and player_result == "ê°œêµ´") or \
+             (user_choice == "ë³´" and computer_choice == "ë³´" and player_result == "ê°œêµ´"):
+            print("ê²Œì„ì—ì„œ ìŠ¹ë¦¬í•˜ì…¨ìŠµë‹ˆë‹¤!")
         else:
-            print("°ÔÀÓ¿¡¼­ ÆĞ¹èÇÏ¼Ì½À´Ï´Ù!")
+            print("ê²Œì„ì—ì„œ íŒ¨ë°°í•˜ì…¨ìŠµë‹ˆë‹¤!")
         
         break
 
-# °ÔÀÓ ½ÇÇà
+# ê²Œì„ ì‹¤í–‰
 while True:
     play_game()
 
-    # °ÔÀÓÀ» °è¼ÓÇÒÁö ¹¯±â
-    play_again = input("°ÔÀÓÀ» »õ·Î ½ÃÀÛÇÏ·Á¸é 1, Á¾·áÇÏ·Á¸é 2¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ").strip()
+    # ê²Œì„ì„ ê³„ì†í• ì§€ ë¬»ê¸°
+    play_again = input("ê²Œì„ì„ ìƒˆë¡œ ì‹œì‘í•˜ë ¤ë©´ 1, ì¢…ë£Œí•˜ë ¤ë©´ 2ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ").strip()
     if play_again != '1':
         break
 
-print("°ÔÀÓ Á¾·á!")
+print("ê²Œì„ ì¢…ë£Œ!")
