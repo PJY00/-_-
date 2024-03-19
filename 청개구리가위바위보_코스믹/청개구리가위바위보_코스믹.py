@@ -36,7 +36,7 @@ def play_game():
         
         computer_choice = get_computer_choice()
         
-        print("상대는 [{}]을 냈습니다 :".format(computer_choice[0:2]))  # 상대의 선택 표시
+        print("상대는 [{}]을 냈습니다 :".format(computer_choice))  # 상대의 선택 표시
 
         # 가위바위보 결과 입력 시간 제한 설정
         player_result = is_input_valid(3)
